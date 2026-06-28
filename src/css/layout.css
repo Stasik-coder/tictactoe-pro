@@ -1,0 +1,115 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.game-card{
+    width:560px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:40px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.eyebrow {
+    color: #60a5fa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.players div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.players span {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.status {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.score {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.score div{
+    background:var(--secondary);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:15px;
+    text-align:center;
+    transition:.25s;
+}
+
+.score span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.score strong {
+    font-size: 22px;
+}
+
+.settings {
+    margin-bottom: 25px;
+}
+
+.settings label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.settings select {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    background: #334155;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+}
+
+body[data-theme='light'] .settings select{
+    background:#ffffff;
+    color:#0f172a;
+    border:1px solid #dbe4ef;
+    box-shadow:0 8px 20px rgba(15,23,42,.06);
+}
+body[data-theme='light'] .settings select:hover{
+    background:#f8fafc;
+}
+body[data-theme='light'] .settings select:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+}

@@ -1,0 +1,28 @@
+.actions{
+    display:flex;
+    gap:15px;
+}
+
+.button{
+    flex:1;
+    border:none;
+    border-radius:16px;
+    padding:15px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:700;
+    background:linear-gradient(135deg, #3b82f6, #2563eb);
+    color:white;
+    transition:.25s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    filter:brightness(110%);
+}
+
+.button-secondary{
+    background:var(--secondary);
+    color:var(--text);
+    border:1px solid var(--border);
+}

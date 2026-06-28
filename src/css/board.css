@@ -1,0 +1,29 @@
+.board{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.cell{
+    aspect-ratio:1;
+    border:1px solid var(--border);
+    border-radius:22px;
+    background:var(--secondary);
+    color:var(--text);
+    font-size:54px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.cell:hover{
+    transform:translateY(-4px);
+    background:var(--secondary-hover);
+}
+
+.cell-win {
+    background:#22c55e;
+    color: #07110b;
+    box-shadow: 0 0 35px rgba(34,197,94,.45);
+}

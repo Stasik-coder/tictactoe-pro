@@ -1,0 +1,14 @@
+{
+  "name": "tictactoe-pro",
+  "version": "1.0.0",
+  "description": "TicTacToe Pro — интерактивная игра крестики-нолики на JavaScript",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
