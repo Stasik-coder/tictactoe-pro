@@ -10,6 +10,7 @@ import {Score} from './core/Score.js';
 import {AI} from './core/AI.js';
 import {BoardUI} from './ui/BoardUI.js';
 import {ThemeUI} from './ui/ThemeUI.js';
+import {ModalUI} from './ui/ModalUI.js';
 import {GAME_STATUS,PLAYERS} from './utils/constants.js';
 
 const app = document.querySelector('#app');
@@ -59,11 +60,15 @@ app.innerHTML = `
   </main>
 `;
 
+const modalContainer=document.createElement('div');
+modalContainer.setAttribute('data-modal','');
+document.body.append(modalContainer);
+
 const game = new Game();
 const score = new Score();
 
 const boardUI = new BoardUI(document.querySelector('[data-board]'));
-
+const modalUI = new ModalUI(modalContainer);
 const statusElement = document.querySelector('[data-status]');
 const newGameButton = document.querySelector('[data-new-game]');
 const resetScoreButton = document.querySelector('[data-reset-score]');
@@ -107,17 +112,23 @@ const updateScore = () => {
     scoreDrawsElement.textContent = currentScore.draws;
 };
 
-const saveResultIfNeeded = () => {
-    if (isResultSaved) return;
-
-    if (game.status === GAME_STATUS.WIN) {
+const saveResultIfNeeded=()=>{
+    if(isResultSaved)return;
+    if(game.status===GAME_STATUS.WIN){
         score.addWin(game.winner);
-        isResultSaved = true;
+        isResultSaved=true;
+        modalUI.show({
+            title:'🏆 Победа!',
+            text:`Победил игрок ${game.winner}`
+        });
     }
-
-    if (game.status === GAME_STATUS.DRAW) {
+    if(game.status===GAME_STATUS.DRAW){
         score.addDraw();
-        isResultSaved = true;
+        isResultSaved=true;
+        modalUI.show({
+            title:'🤝 Ничья!',
+            text:'Победителя нет, попробуй еще раз'
+        });
     }
 };
 
@@ -163,12 +174,21 @@ newGameButton.addEventListener('click', () => {
     game.reset();
     isResultSaved = false;
     isComputerThinking = false;
+    modalUI.hide();
     render();
 });
 
 resetScoreButton.addEventListener('click', () => {
     score.reset();
     updateScore();
+});
+
+modalUI.onNewGameClick(() => {
+    game.reset();
+    isResultSaved = false;
+    isComputerThinking=false;
+    modalUI.hide();
+    render();
 });
 
 render();

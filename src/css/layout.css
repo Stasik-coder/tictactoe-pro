@@ -113,3 +113,12 @@ body[data-theme='light'] .settings select:focus{
     border-color:#2563eb;
     box-shadow:0 0 0 4px rgba(37,99,235,.12);
 }
+
+[data-modal]{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+[data-modal]:has(.modal-overlay){
+    pointer-events:auto;
+}
