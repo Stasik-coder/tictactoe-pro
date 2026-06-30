@@ -44,7 +44,7 @@ Netlify
 
 Клонировать репозиторий
 
-git clone ВСТАВЬ_ССЫЛКУ_НА_GITHUB
+git clone https://github.com/Stasik-coder/tictactoe-pro.git
 
 Перейти в папку проекта
 
@@ -65,6 +65,7 @@ npm run build
 Предпросмотр production-версии
 
 npm run preview
+
 🎯 Что было реализовано
 
 Создание игрового поля с интерактивным взаимодействием пользователей.
