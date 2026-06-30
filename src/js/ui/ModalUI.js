@@ -16,7 +16,7 @@ export class ModalUI{
     hide(){
         this.modalElement.innerHTML='';
     }
-    onNewGameClick(callback){
+    onNewGame(callback){
         this.modalElement.addEventListener('click',(event)=>{
             const button=event.target.closest('[data-modal-new-game]');
             if(!button)return;
