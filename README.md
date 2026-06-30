@@ -4,9 +4,7 @@
 
 🌐 Ссылки
 
-GitHub: ВСТАВЬ_ССЫЛКУ_НА_GITHUB
-
-Netlify: ВСТАВЬ_ССЫЛКУ_НА_NETLIFY
+Netlify: https://thunderous-valkyrie-9421d6.netlify.app/
 
 ✨ Возможности
 
